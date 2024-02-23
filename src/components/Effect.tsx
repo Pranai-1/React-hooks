@@ -27,15 +27,21 @@ function Effect(){
     //Three different useEffects
 
     console.log(y())
-    // function y(){
-    //     let[local,setLocal]=useState(0);
-    //         useEffect(()=>{
-    //             setLocal(2)    
-    //            console.log("y "+ local) //the value of local might not gets updated because of batching of updates
-    //         },[])
+    function y(){
+        let[local,setLocal]=useState(0);
+            useEffect(()=>{
+                setLocal(2)    
+               console.log("y "+ local) 
+
+               setTimeout(()=>{
+                console.log("y "+ local) 
+               },3000)
+               //The value of local that is logged is 0 in both cases because,useEffect forms a closure with the local
+               //variable when useEffect gets created.so,value of local is still 0 even after 3 seconds.
+            },[])
        
-    //     return local
-    // }
+        return local//this will return 2
+    }
 
     // function y(){
     //     let[local,setLocal]=useState(0);
@@ -47,16 +53,16 @@ function Effect(){
     //     return local
     // }
 
-    function y(){//value becomes 2 after 3 seconds 
-        let[local,setLocal]=useState(0);
-        useEffect(()=>{
-        setTimeout(()=>{
-                setLocal(2)   
-        },3000)
-            },[])
-        console.log("y "+ local)
-        return local
-    }
+    // function y(){//value becomes 2 after 3 seconds 
+    //     let[local,setLocal]=useState(0);
+    //     useEffect(()=>{
+    //     setTimeout(()=>{
+    //             setLocal(2)   
+    //     },3000)
+    //         },[])
+    //     console.log("y "+ local)
+    //     return local
+    // }
  
 return(
     <>
