@@ -23,11 +23,41 @@ function Effect(){
         },1000)
       
     },[])
+
+    //Three different useEffects
+
     console.log(y())
-    function y(){
-        let[state,setState]=useState(0);
-        useEffect(()=>{console.log("y")},[])
+    // function y(){
+    //     let[local,setLocal]=useState(0);
+    //         useEffect(()=>{
+    //             setLocal(2)    
+    //            console.log("y "+ local) //the value of local might not gets updated because of batching of updates
+    //         },[])
+       
+    //     return local
+    // }
+
+    // function y(){
+    //     let[local,setLocal]=useState(0);
+    //         useEffect(()=>{
+    //             setLocal(2)    
+              
+    //         },[])
+    //         console.log("y "+ local) //value of local gets updated
+    //     return local
+    // }
+
+    function y(){//value becomes 2 after 3 seconds 
+        let[local,setLocal]=useState(0);
+        useEffect(()=>{
+        setTimeout(()=>{
+                setLocal(2)   
+        },3000)
+            },[])
+        console.log("y "+ local)
+        return local
     }
+ 
 return(
     <>
     <div className=" h-screen w-screen" style={{backgroundColor: color}}>
