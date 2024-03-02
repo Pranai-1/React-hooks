@@ -10,7 +10,7 @@ function Effect(){
     const[color,setColor]=useState('white')
     
     
-//    console.log(useOnline())
+   console.log(useOnline())
 //    console.log(helper(0));
 
 //    console.log(Reducer())
@@ -26,7 +26,7 @@ function Effect(){
       
     },[])
 
-    
+
     // useEffect(()=>{
     //     setTimeout(()=>{
     //         setColor('Black')

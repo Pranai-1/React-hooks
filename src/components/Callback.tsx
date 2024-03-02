@@ -1,5 +1,6 @@
-import { useCallback, useState } from "react"
+import { memo, useCallback, useState } from "react"
 import Search from "./Search"
+import Memo from "./Memo";
 
 
 export default function Callback(){
@@ -27,6 +28,12 @@ export default function Callback(){
         console.log(x)
       setUsers([...x])
     }
+
+    console.log(Memo())
+
+console.log(<Memo/>)
+
+
     return(
         <div className="h-screen w-screen bg-slate-200  p-2"> 
            <div className="h-max w-max mt-10 p-5 ">
@@ -44,3 +51,4 @@ export default function Callback(){
         </div>
     )
 }
+

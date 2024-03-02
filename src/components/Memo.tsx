@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react"
 
-export default function memo(){
+export default function Memo(){
     const[value,setValue]=useState<number>(0)
     const[count,setCount]=useState<number>(0)
    // const prime=getPrime(value)//it will calculate the result eventhough the value doesn't change because of change in count
