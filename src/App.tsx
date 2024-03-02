@@ -7,6 +7,7 @@ import MyForm from './components/UncontrolledComponent';
 import Landing from './components/context';
 import Cart from './components/cart';
 import Memo from './components/Memo';
+import Callback from './components/Callback';
 
 const Reducer=lazy(()=>import("./components/Reducer"))
 //Lazy Loading:-
@@ -31,6 +32,7 @@ function App() {
        <Route  path="/navigate" element={<Navigate />}/>
        <Route  path="/un" element={<MyForm />}/>
        <Route  path="/memo" element={<Memo />} />
+       <Route  path="/callback" element={<Callback />} />
        </Routes>
        
        </Router>
