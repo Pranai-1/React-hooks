@@ -66,6 +66,8 @@ console.log(typeof input2Ref.current)
       <div  className='m-2 bg-gray-400 p-2'>
         <label htmlFor="input1" className='p-2'>Input 1:</label>
         <input type="text" id="input1" name="input1" defaultValue="Default Value 1" ref={input1Ref} className='p-2'/>
+        <input type="text"  defaultValue="Default Value 1" className='p-2' value={"input2Ref"}/>
+        I cannot update this because i added value
       </div>
       <div className='m-2 bg-gray-400 p-2'>
         <label htmlFor="input2" className='p-2'>Input 2:</label>

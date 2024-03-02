@@ -6,6 +6,7 @@ import Navigate from './components/navigate';
 import MyForm from './components/UncontrolledComponent';
 import Landing from './components/context';
 import Cart from './components/cart';
+import Memo from './components/Memo';
 
 const Reducer=lazy(()=>import("./components/Reducer"))
 //Lazy Loading:-
@@ -29,6 +30,7 @@ function App() {
        <Route  path="/reducer" element={<Suspense><Reducer /></Suspense>}/>
        <Route  path="/navigate" element={<Navigate />}/>
        <Route  path="/un" element={<MyForm />}/>
+       <Route  path="/memo" element={<Memo />} />
        </Routes>
        
        </Router>
