@@ -4,6 +4,8 @@ import './App.css'
 import { Suspense, lazy } from 'react';
 import Navigate from './components/navigate';
 import MyForm from './components/UncontrolledComponent';
+import Landing from './components/context';
+import Cart from './components/cart';
 
 const Reducer=lazy(()=>import("./components/Reducer"))
 //Lazy Loading:-
@@ -22,6 +24,8 @@ function App() {
        <Router>    
       <Routes>
        <Route  path="/" element={<Effect />} />
+       <Route  path="/items" element={<Landing />} />
+       <Route  path="/cart" element={<Cart />} />
        <Route  path="/reducer" element={<Suspense><Reducer /></Suspense>}/>
        <Route  path="/navigate" element={<Navigate />}/>
        <Route  path="/un" element={<MyForm />}/>

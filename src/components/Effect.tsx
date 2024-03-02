@@ -8,6 +8,8 @@ import Reducer from "./Reducer";
 
 function Effect(){
     const[color,setColor]=useState('white')
+    
+    
 //    console.log(useOnline())
 //    console.log(helper(0));
 
@@ -23,6 +25,17 @@ function Effect(){
         },1000)
       
     },[])
+
+    
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         setColor('Black')
+    //     },1000)
+      
+    // })
+//This useEffect hook doesn't have a dependency array, which means it will run after every render of the component
+// (componentDidMount and componentDidUpdate equivalent). 
+//It also sets the color to black after a delay of 1000 milliseconds, but it will do so after each render, not just once.
 
     //Three different useEffects
 
@@ -89,9 +102,9 @@ return(
         <button className='text-white bg-orange-600 rounded p-2 m-1' onClick={() => setColor("Orange")}>Orange</button>
     
     </div>
-    <Slider name="pranai"/>
+    
     </div>
-   
+    <Slider name="pranai"/>
     </div>
    
     </>

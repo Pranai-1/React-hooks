@@ -1,8 +1,19 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Navigate() {
     const navigate = useNavigate();
+    const [notUsed,setNotUsed]=useState(0);
+    useEffect(()=>{setTimeout(()=>{
+        console.log("notUsed ")
+        setNotUsed(5) ;
+    },2000)}
+//useEffect hook won't cause a re-render of the component because the state update doesn't affect 
+//any state variable used in the component's render function
+    ,[])
 
+    console.log(notUsed)
+    
       // Navigate to '/other-route' and replace the current entry in the history stack
       //Current route cannot be reached if we press back button 
     const handleReplaceNavigate = () => {
