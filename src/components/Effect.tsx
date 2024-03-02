@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState,useEffect, useMemo } from "react"
 import helper from "./Helper";
 import useOnline from "./useOnline";
 import Slider from "./Slider";
@@ -63,7 +63,20 @@ function Effect(){
     //     console.log("y "+ local)
     //     return local
     // }
- 
+    console.log("hi")
+    const obj={name:"pranai"}
+
+    useEffect(()=>{console.log("obj changed")},[obj])//after every re-render it will gets called because obj is an object
+    //and it will have new referenece for a re-render
+
+   const objInUseMemo=useMemo(()=>{obj},[])//memomoizing the value of obj so that it will not change for every re-render
+    useEffect(()=>{console.log("objInUseMemo changed")},[objInUseMemo])
+
+
+    const[objInState,setObjInState]=useState({name:"pranai"})
+    useEffect(()=>{console.log("objInState changed")},[objInState])//This will not gets called after every re-render
+
+
 return(
     <>
     <div className=" h-screen w-screen" style={{backgroundColor: color}}>
@@ -76,9 +89,9 @@ return(
         <button className='text-white bg-orange-600 rounded p-2 m-1' onClick={() => setColor("Orange")}>Orange</button>
     
     </div>
-  
+    <Slider name="pranai"/>
     </div>
-    <Slider/>
+   
     </div>
    
     </>

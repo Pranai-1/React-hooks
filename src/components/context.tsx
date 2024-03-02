@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 //To avoid propdrilling we can use contextAPI and useContext hook to wrap the required state,now there is no need to pass them as props
 //The problem here is still the re-renders are same and other problem is
 //If i wrap a child component inside contextprovider in my parent component,if the wrapped child component have another few 
-//child components all of them still have accees to the state,eventhough they were not wrapped in contextprovider,contextprovider
+//child components all of them still have accees to the state,evenhough they were not wrapped in contextprovider,contextprovider
 //automatically passes down the wrapped values to all the child components of the wrapped child components. 
 
 const MyContext = React.createContext<any>([]);

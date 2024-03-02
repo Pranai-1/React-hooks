@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-const Slider = () => {
+const Slider = (props:any) => {
   const [value, setValue] = useState(0);
-console.log("slider is called")
+console.log("slider is called "+props.name)
   const handleChange = (e:any) => {
     setValue(parseInt(e.target.value));
     console.log(value)
