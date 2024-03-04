@@ -1,9 +1,8 @@
 import { useState,useEffect, useMemo } from "react"
-import helper from "./Helper";
 import useOnline from "./useOnline";
 import Slider from "./Slider";
 import { useLocation } from "react-router-dom";
-import Reducer from "./Reducer";
+
 
 
 function Effect(){

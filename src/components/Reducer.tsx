@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useCallback, useMemo, useReducer } from "react";
 
 interface State {
   count: number;
@@ -27,9 +27,19 @@ const initialState: State = {
 function Reducer() {
   const [state, dispatch] = useReducer(counterReducer, initialState);
 
-  function submit(actionType: 'INCREMENT' | 'DECREMENT') {
+  const waiting=useMemo(()=>{
+   let i=0, temp=0;
+    while(i<20000000){
+       temp+=i
+       i++;
+    }
+    return temp
+  },[])
+
+
+  const submit = useCallback((actionType:"INCREMENT" | "DECREMENT") => {
     dispatch({ type: actionType });
-  }
+  }, []);
 
   return (
     <>
@@ -39,9 +49,25 @@ function Reducer() {
           <div className="font-bold text-center text-2xl text-blue-600">count is : {state.count}</div>
           <button className="font-bold text-center text-2xl bg-green-500 rounded-lg px-3 pb-1" onClick={() => { submit('INCREMENT') }}>+</button>
         </div>
+        <p>{waiting}</p>
       </div>
     </>
   );
 }
 
 export default Reducer;
+
+
+// const MyLazyComponent = React.lazy(() => import('./MyComponent'));//one of the way to lazyload but this is not recommended
+//as it lazy load everytime 
+// function MyLazyComponentWrapper() {
+//   const [componentLoaded, setComponentLoaded] = useState(false);
+
+//   useEffect(() => {
+//     MyLazyComponent().then(() => {
+//       setComponentLoaded(true);
+//     });
+//   }, []);
+
+//   return componentLoaded ? <MyLazyComponent /> : <div>Loading...</div>;
+// }

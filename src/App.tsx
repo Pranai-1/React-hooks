@@ -19,6 +19,12 @@ const Reducer=lazy(()=>import("./components/Reducer"))
 //its children. This asynchronous operation could be fetching data from an API, loading a lazy-loaded component using React.lazy(), 
 //or any other asynchronous task
 
+//If you use React.lazy() without Suspense, React will not be able to handle the loading state of the lazy-loaded 
+//component automatically. Instead, it will result in a runtime error.
+
+//When you use React.lazy(), you must also use Suspense to wrap the component being lazily loaded. This is because 
+//Suspense is responsible for handling the loading state and providing a fallback UI while the lazy-loaded component is being loaded.
+
 function App() {
 
   return (
@@ -28,7 +34,7 @@ function App() {
        <Route  path="/" element={<Effect />} />
        <Route  path="/items" element={<Landing />} />
        <Route  path="/cart" element={<Cart />} />
-       <Route  path="/reducer" element={<Suspense><Reducer /></Suspense>}/>
+       <Route  path="/reducer" element={<Suspense fallback={<div>Loading...</div>}><Reducer /></Suspense>}/>
        <Route  path="/navigate" element={<Navigate />}/>
        <Route  path="/un" element={<MyForm />}/>
        <Route  path="/memo" element={<Memo />} />
