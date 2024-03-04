@@ -85,7 +85,7 @@ function Effect(){
     useEffect(()=>{console.log("objInUseMemo changed")},[objInUseMemo])
 
 
-    const[objInState,setObjInState]=useState({name:"pranai"})
+    const[objInState]=useState({name:"pranai"})
     useEffect(()=>{console.log("objInState changed")},[objInState])//This will not gets called after every re-render
 
 
