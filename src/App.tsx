@@ -8,6 +8,8 @@ import Landing from './components/context';
 import Cart from './components/cart';
 import Memo from './components/Memo';
 import Callback from './components/Callback';
+import OTP from './components/OTP';
+import SearchBar from './components/Searchbar';
 
 const Reducer=lazy(()=>import("./components/Reducer"))
 //Lazy Loading:-
@@ -39,6 +41,8 @@ function App() {
        <Route  path="/un" element={<MyForm />}/>
        <Route  path="/memo" element={<Memo />} />
        <Route  path="/callback" element={<Callback />} />
+       <Route  path="/otp" element={<OTP />} />
+       <Route  path="/search" element={<SearchBar />} />
        </Routes>
        
        </Router>
