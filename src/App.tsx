@@ -10,6 +10,7 @@ import Memo from './components/Memo';
 import Callback from './components/Callback';
 import OTP from './components/OTP';
 import SearchBar from './components/Searchbar';
+import ScrollRender from './components/scrollRender';
 
 const Reducer=lazy(()=>import("./components/Reducer"))
 //Lazy Loading:-
@@ -43,6 +44,7 @@ function App() {
        <Route  path="/callback" element={<Callback />} />
        <Route  path="/otp" element={<OTP />} />
        <Route  path="/search" element={<SearchBar />} />
+       <Route  path="/scroll" element={<ScrollRender />} />
        </Routes>
        
        </Router>
